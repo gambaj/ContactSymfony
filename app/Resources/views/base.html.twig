@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Mon projet</title>
+        <link rel="icon" type="image/x-icon" href="{{asset('favicon.ico')}}" />
+        <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}" media="all">
+        <script type="text/javascript" src="{{asset('js/script.js')}}"></script>
+    </head>
+    
+    <body id="main_body">
+        <img id="top" src="{{asset('images/top.png')}}" alt="">
+        <div id="container">
+            {% block container %}{% endblock %}
+        </div>
+    </body>
+</html>

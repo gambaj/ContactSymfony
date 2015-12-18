@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block container %}
+    <h1>Contact : {{ contact.prenom }} {{ contact.nom }}</h1>
+
+    <div class="centre">
+        <div class="description">
+            <h2>Contact : {{ contact.prenom }} {{ contact.nom }}</h2>
+            <a href="{{ path('contact_index') }}">Retour à la liste</a>
+        </div>
+    </div>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ contact.id }}</td>
+            </tr>
+            <tr>
+                <th>Utilisateur</th>
+                <td>{{ contact.utilisateur }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ contact.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ contact.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Societe</th>
+                <td>{{ contact.societe }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ contact.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Numero</th>
+                <td>{{ contact.numero }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ contact.email }}</td>
+            </tr>
+            <tr>
+                <th>Site</th>
+                <td>{{ contact.site }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ contact.type }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('contact_edit', { 'id': contact.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block container %}
+    <h1><a>Liste de contact</a></h1>
+
+    <div class="centre">
+        <div class="description">
+            <h2>Répertoire : {{pagination.getTotalItemCount}}</h2>
+            <p><a href="{{ path('contact_new') }}">Ajouter nouveau contact</a></p>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Utilisateur</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Societe</th>
+                <th>Adresse</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for contact in pagination %}
+            <tr>
+                <td><a href="{{ path('contact_show', { 'id': contact.id }) }}">{{ contact.id }}</a></td>
+                <td>{{ contact.utilisateur }}</td>
+                <td>{{ contact.nom }}</td>
+                <td>{{ contact.prenom }}</td>
+                <td>{{ contact.societe }}</td>
+                <td>{{ contact.adresse }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('contact_show', { 'id': contact.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('contact_edit', { 'id': contact.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="navigation">
+    {{ knp_pagination_render(pagination) }}
+    </div>
+{% endblock %}

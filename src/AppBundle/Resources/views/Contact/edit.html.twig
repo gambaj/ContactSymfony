@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block container %}
+    <h1>Modification de : {{ contact.prenom }} {{ contact.nom }}</h1>
+
+    <div class="centre">
+        <div class="description">
+            <h2>Modification de : {{ contact.prenom }} {{ contact.nom }}</h2>
+            <a href="{{ path('contact_index') }}">Retour à la liste</a>
+        </div>
+    </div>
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <input type="submit" value="Edit" />
+    {{ form_end(edit_form) }}
+
+    <ul>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
