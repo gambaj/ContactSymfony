@@ -105,3 +105,9 @@ da422a,::1,GET,http://localhost/contactsymfony/web/app_dev.php/contact/,14504473
 431d4c,::1,GET,http://localhost/contactsymfony/web/app_dev.php/contact/new,1450447397,,200
 7b5216,::1,GET,http://localhost/contactsymfony/web/app_dev.php/contact/,1450447400,,200
 8b58c9,::1,GET,http://localhost/contactsymfony/web/app_dev.php/contact/,1450447477,,200
+184fc9,::1,GET,http://localhost/contactsymfony/web/app_dev.php/contact/,1450449848,,200
+ff285c,::1,GET,http://localhost/contactsymfony/web/app_dev.php/contact/1,1450449853,,200
+ae2666,::1,GET,http://localhost/contactsymfony/web/app_dev.php/contact/1/edit,1450449856,,200
+818ad8,::1,GET,http://localhost/contactsymfony/web/app_dev.php/contact/,1450449858,,200
+98f541,::1,GET,http://localhost/contactsymfony/web/app_dev.php/contact/new,1450449859,,200
+433ed7,::1,GET,http://localhost/contactsymfony/web/app_dev.php/contact/,1450449862,,200

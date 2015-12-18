@@ -112,7 +112,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                     return $this->redirect($pathinfo.'/', 'contact_index');
                 }
 
-                return array (  '_controller' => 'AppBundle\\Controller\\ContactController::indexAction',  '_route' => 'contact_index',);
+                return array (  '_controller' => 'ContactBundle\\Controller\\ContactController::indexAction',  '_route' => 'contact_index',);
             }
             not_contact_index:
 
@@ -123,7 +123,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                     goto not_contact_create;
                 }
 
-                return array (  '_controller' => 'AppBundle\\Controller\\ContactController::createAction',  '_route' => 'contact_create',);
+                return array (  '_controller' => 'ContactBundle\\Controller\\ContactController::createAction',  '_route' => 'contact_create',);
             }
             not_contact_create:
 
@@ -134,7 +134,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                     goto not_contact_new;
                 }
 
-                return array (  '_controller' => 'AppBundle\\Controller\\ContactController::newAction',  '_route' => 'contact_new',);
+                return array (  '_controller' => 'ContactBundle\\Controller\\ContactController::newAction',  '_route' => 'contact_new',);
             }
             not_contact_new:
 
@@ -145,13 +145,13 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                     goto not_contact_show;
                 }
 
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'contact_show')), array (  '_controller' => 'AppBundle\\Controller\\ContactController::showAction',));
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'contact_show')), array (  '_controller' => 'ContactBundle\\Controller\\ContactController::showAction',));
             }
             not_contact_show:
 
             // contact_edit
             if (preg_match('#^/contact/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'contact_edit')), array (  '_controller' => 'AppBundle\\Controller\\ContactController::editAction',));
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'contact_edit')), array (  '_controller' => 'ContactBundle\\Controller\\ContactController::editAction',));
             }
 
             // contact_delete
@@ -161,7 +161,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                     goto not_contact_delete;
                 }
 
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'contact_delete')), array (  '_controller' => 'AppBundle\\Controller\\ContactController::deleteAction',));
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'contact_delete')), array (  '_controller' => 'ContactBundle\\Controller\\ContactController::deleteAction',));
             }
             not_contact_delete:
 

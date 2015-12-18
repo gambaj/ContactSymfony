@@ -1,13 +1,13 @@
 <?php
 
-namespace AppBundle\Controller;
+namespace ContactBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use AppBundle\Entity\Contact;
-use AppBundle\Form\ContactType;
+use ContactBundle\Entity\Contact;
+use ContactBundle\Form\ContactType;
 
 /**
  * Contact controller.
@@ -24,7 +24,7 @@ class ContactController extends Controller
         $em = $this->getDoctrine()->getManager();
         $queryBuilder = $em->createQueryBuilder();
 
-        $queryBuilder->select('contact')->from('AppBundle:Contact', 'contact');
+        $queryBuilder->select('contact')->from('ContactBundle:Contact', 'contact');
 
         $paginator  = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
@@ -33,7 +33,7 @@ class ContactController extends Controller
             5
         );
 
-        return $this->render('AppBundle:Contact:index.html.twig', array(
+        return $this->render('ContactBundle:Contact:index.html.twig', array(
             'pagination' => $pagination
         ));
     }
@@ -56,7 +56,7 @@ class ContactController extends Controller
             return $this->redirectToRoute('contact_show', array('id' => $contact->getId()));
         }
         
-        return $this->render('AppBundle:Contact:new.html.twig', array(
+        return $this->render('ContactBundle:Contact:new.html.twig', array(
             'contact' => $contact,
             'form' => $form->createView(),
         ));
@@ -69,7 +69,7 @@ class ContactController extends Controller
     {
         $deleteForm = $this->createDeleteForm($contact);
 
-        return $this->render('AppBundle:Contact:show.html.twig', array(
+        return $this->render('ContactBundle:Contact:show.html.twig', array(
             'contact' => $contact,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -92,7 +92,7 @@ class ContactController extends Controller
             return $this->redirectToRoute('contact_index');
         }
 
-        return $this->render('AppBundle:Contact:edit.html.twig', array(
+        return $this->render('ContactBundle:Contact:edit.html.twig', array(
             'contact' => $contact,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

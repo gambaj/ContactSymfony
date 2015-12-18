@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Entity;
+namespace ContactBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -9,7 +9,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * Contact
  *
  * @ORM\Table(name="contact")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\ContactRepository")
+ * @ORM\Entity(repositoryClass="ContactBundle\Repository\ContactRepository")
  */
 class Contact
 {
