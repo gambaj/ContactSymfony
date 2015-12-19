@@ -29,7 +29,8 @@ class ContactController extends Controller
         $em = $this->getDoctrine()->getManager();
         $queryBuilder = $em->createQueryBuilder();
 
-        $queryBuilder->select('contact')->from('ContactBundle:Contact', 'contact');
+        $queryBuilder->select('contact')->from('ContactBundle:Contact', 'contact')->where('contact.utilisateur = :utilisateur')
+    ->setParameter('utilisateur', $session->get('utilisateur'));
 
         $paginator  = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
@@ -62,6 +63,7 @@ class ContactController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $contact->setUtilisateur($session->get('utilisateur'));
             $em->persist($contact);
             $em->flush();
 
@@ -77,7 +79,7 @@ class ContactController extends Controller
     /**
      * Finds and displays a Contact entity.
      */
-    public function showAction(Contact $contact)
+    public function showAction(Request $request, Contact $contact)
     {
         $session = $request->getSession();
 

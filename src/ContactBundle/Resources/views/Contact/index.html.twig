@@ -19,7 +19,6 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Utilisateur</th>
                 <th>Nom</th>
                 <th>Prenom</th>
                 <th>Societe</th>
@@ -31,7 +30,6 @@
         {% for contact in pagination %}
             <tr>
                 <td><a href="{{ path('contact_show', { 'id': contact.id }) }}">{{ contact.id }}</a></td>
-                <td>{{ contact.utilisateur }}</td>
                 <td>{{ contact.nom }}</td>
                 <td>{{ contact.prenom }}</td>
                 <td>{{ contact.societe }}</td>
