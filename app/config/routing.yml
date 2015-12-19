@@ -1,3 +1,7 @@
+authentification:
+    resource: "@AuthentificationBundle/Resources/config/routing.yml"
+    prefix:   /authentification
+
 application:
     resource: "@ContactBundle/Resources/config/routing.yml"
     prefix:   /contact

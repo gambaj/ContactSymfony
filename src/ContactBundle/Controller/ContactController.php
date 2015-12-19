@@ -11,8 +11,6 @@ use ContactBundle\Form\ContactType;
 
 /**
  * Contact controller.
- *
- * @Route("/contact")
  */
 class ContactController extends Controller
 {

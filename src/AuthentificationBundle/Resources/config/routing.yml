@@ -1,0 +1,3 @@
+authentification_homepage:
+    path:     /
+    defaults: { _controller: AuthentificationBundle:Authentification:index }

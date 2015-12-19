@@ -100,6 +100,15 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // authentification_homepage
+        if (rtrim($pathinfo, '/') === '/authentification') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'authentification_homepage');
+            }
+
+            return array (  '_controller' => 'AuthentificationBundle\\Controller\\AuthentificationController::indexAction',  '_route' => 'authentification_homepage',);
+        }
+
         if (0 === strpos($pathinfo, '/contact')) {
             // contact_index
             if (rtrim($pathinfo, '/') === '/contact') {
