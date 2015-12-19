@@ -480,3 +480,5 @@ d9b7fc,::1,GET,http://localhost/contactsymfony/web/app_dev.php/authentification/
 b670d5,::1,GET,http://localhost/contactsymfony/web/app_dev.php/authentification/connexion,1450496090,,200
 a257b9,::1,GET,http://localhost/contactsymfony/web/app_dev.php/contact/,1450496092,,302
 7fc06c,::1,GET,http://localhost/contactsymfony/web/app_dev.php/authentification/connexion,1450496093,,200
+13c09d,::1,GET,http://localhost/contactsymfony/web/app_dev.php/authentification/,1450496282,,200
+1bdbc6,::1,GET,http://localhost/contactsymfony/web/app_dev.php/contact/,1450496291,,200
