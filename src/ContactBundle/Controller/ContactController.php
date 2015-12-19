@@ -19,6 +19,13 @@ class ContactController extends Controller
      */
     public function indexAction(Request $request)
     {
+        $session = $request->getSession();
+
+        if ($session->get('utilisateur') == null) {
+            $session->getFlashBag()->add('info', 'Vous devez vous connecter !');
+            return $this->redirectToRoute('authentification_connexion');
+        }
+
         $em = $this->getDoctrine()->getManager();
         $queryBuilder = $em->createQueryBuilder();
 
@@ -41,6 +48,13 @@ class ContactController extends Controller
      */
     public function newAction(Request $request)
     {
+        $session = $request->getSession();
+
+        if ($session->get('utilisateur') == null) {
+            $session->getFlashBag()->add('info', 'Vous devez vous connecter !');
+            return $this->redirectToRoute('authentification_connexion');
+        }
+
         $contact = new Contact();
         
         $form = $this->createForm(ContactType::class, $contact);
@@ -65,6 +79,13 @@ class ContactController extends Controller
      */
     public function showAction(Contact $contact)
     {
+        $session = $request->getSession();
+
+        if ($session->get('utilisateur') == null) {
+            $session->getFlashBag()->add('info', 'Vous devez vous connecter !');
+            return $this->redirectToRoute('authentification_connexion');
+        }
+
         $deleteForm = $this->createDeleteForm($contact);
 
         return $this->render('ContactBundle:Contact:show.html.twig', array(
@@ -78,6 +99,13 @@ class ContactController extends Controller
      */
     public function editAction(Request $request, Contact $contact)
     {
+        $session = $request->getSession();
+
+        if ($session->get('utilisateur') == null) {
+            $session->getFlashBag()->add('info', 'Vous devez vous connecter !');
+            return $this->redirectToRoute('authentification_connexion');
+        }
+
         $deleteForm = $this->createDeleteForm($contact);
         $editForm = $this->createForm(ContactType::class, $contact);
         $editForm->handleRequest($request);
@@ -102,6 +130,13 @@ class ContactController extends Controller
      */
     public function deleteAction(Request $request, Contact $contact)
     {
+        $session = $request->getSession();
+
+        if ($session->get('utilisateur') == null) {
+            $session->getFlashBag()->add('info', 'Vous devez vous connecter !');
+            return $this->redirectToRoute('authentification_connexion');
+        }
+        
         $form = $this->createDeleteForm($contact);
         $form->handleRequest($request);
 

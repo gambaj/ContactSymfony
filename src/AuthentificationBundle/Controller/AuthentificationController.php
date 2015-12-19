@@ -36,7 +36,7 @@ class AuthentificationController extends Controller
 
             
             if (count($utilisateurBase) === 1) {
-                $session->getFlashBag()->add('info', 'Le pseudo est déjàa utilisé !');
+                $session->getFlashBag()->add('info', 'Le pseudo est déjà utilisé !');
                 return $this->redirectToRoute('authentification_inscription');
             }
 
@@ -77,10 +77,13 @@ class AuthentificationController extends Controller
 
             
             if (count($utilisateurBase) === 0) {
+                $session->getFlashBag()->add('info', 'Pseudo ou mot de passe incorrect !');
                 return $this->render('AuthentificationBundle:Authentification:connexion.html.twig', array(
                   'form' => $form->createView(),
                 ));
             } 
+
+            $session->set('utilisateur', $utilisateur->getPseudo());
             return $this->redirectToRoute('contact_index');
         }
 
