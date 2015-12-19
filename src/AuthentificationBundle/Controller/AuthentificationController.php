@@ -91,4 +91,11 @@ class AuthentificationController extends Controller
           'form' => $form->createView(),
         ));
     }
+
+    public function deconnexionAction(Request $request)
+    {
+        $session = $request->getSession();
+        $session->remove('utilisateur');
+        return $this->redirectToRoute('authentification_connexion');
+    }
 }

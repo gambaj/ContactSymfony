@@ -115,6 +115,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'AuthentificationBundle\\Controller\\AuthentificationController::connexionAction',  '_route' => 'authentification_connexion',);
             }
 
+            // authentification_deconnexion
+            if ($pathinfo === '/authentification/deconnexion') {
+                return array (  '_controller' => 'AuthentificationBundle\\Controller\\AuthentificationController::deconnexionAction',  '_route' => 'authentification_deconnexion',);
+            }
+
         }
 
         if (0 === strpos($pathinfo, '/contact')) {

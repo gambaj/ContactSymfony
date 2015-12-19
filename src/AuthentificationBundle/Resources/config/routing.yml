@@ -5,3 +5,7 @@ authentification_inscription:
 authentification_connexion:
     path:     /connexion
     defaults: { _controller: AuthentificationBundle:Authentification:connexion}
+
+authentification_deconnexion:
+    path:     /deconnexion
+    defaults: { _controller: AuthentificationBundle:Authentification:deconnexion}

@@ -26,3 +26,4 @@ contact_delete:
     path:      /{id}
     defaults:  { _controller: ContactBundle:Contact:delete}
     methods:  [DELETE]
+
