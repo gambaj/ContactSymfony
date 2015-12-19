@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block container %}
+	<h1><a>Creation utilisateur</a></h1>
+
+    <div class="centre">
+        <div class="description">
+            <h2>Creation utilisateur</h2>
+            <p>Creation de compte a l'aide d'un pseudo et mot de passe.</p>
+            <p><a href="{{ path('authentification_connexion') }}">Se connecter</a></p>
+            <p>
+              {% for message in app.session.flashbag.get('info') %}
+                <p>Message flash : {{ message }}</p>
+              {% endfor %}
+            </p>
+        </div>
+    </div>
+
+    <div class="well">
+  		{{ form(form) }}
+	  </div>
+
+{% endblock %}

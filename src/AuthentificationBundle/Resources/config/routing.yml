@@ -1,3 +1,7 @@
-authentification_homepage:
+authentification_inscription:
     path:     /
-    defaults: { _controller: AuthentificationBundle:Authentification:index }
+    defaults: { _controller: AuthentificationBundle:Authentification:inscription}
+
+authentification_connexion:
+    path:     /connexion
+    defaults: { _controller: AuthentificationBundle:Authentification:connexion}

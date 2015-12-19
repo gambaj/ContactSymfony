@@ -100,13 +100,21 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // authentification_homepage
-        if (rtrim($pathinfo, '/') === '/authentification') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'authentification_homepage');
+        if (0 === strpos($pathinfo, '/authentification')) {
+            // authentification_inscription
+            if (rtrim($pathinfo, '/') === '/authentification') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'authentification_inscription');
+                }
+
+                return array (  '_controller' => 'AuthentificationBundle\\Controller\\AuthentificationController::inscriptionAction',  '_route' => 'authentification_inscription',);
             }
 
-            return array (  '_controller' => 'AuthentificationBundle\\Controller\\AuthentificationController::indexAction',  '_route' => 'authentification_homepage',);
+            // authentification_connexion
+            if ($pathinfo === '/authentification/connexion') {
+                return array (  '_controller' => 'AuthentificationBundle\\Controller\\AuthentificationController::connexionAction',  '_route' => 'authentification_connexion',);
+            }
+
         }
 
         if (0 === strpos($pathinfo, '/contact')) {
